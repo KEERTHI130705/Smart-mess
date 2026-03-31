@@ -9,18 +9,10 @@
 
 <style>
 body { background: #f4f6f9; font-family: 'Segoe UI'; }
-
-/* Navbar background */
-.navbar {
-    background: linear-gradient(45deg,#4e73df,#1cc88a);
-}
-
 /* Navbar text visibility */
 .navbar .nav-link {
     color: white !important;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 8px 12px;
+    font-weight: 500;
 }
 
 /* Hover effect */
@@ -30,56 +22,37 @@ body { background: #f4f6f9; font-family: 'Segoe UI'; }
 
 /* Active page highlight */
 .active-nav {
-    background: white;
+    background: rgb(230, 31, 31);
     color: #4e73df !important;
-    border-radius: 10px;
-    padding: 6px 12px;
+    border-radius: 8px;
+    padding: 5px 10px;
 }
+/* Navbar */
+.navbar { background: linear-gradient(45deg,#4e73df,#1cc88a); }
 
-/* Navbar brand */
-.navbar-brand {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Table scroll */
+/* Table fix */
 .table-container {
     width: 100%;
     overflow-x: auto;
 }
 
 table {
-    min-width: 600px;
+    min-width: 600px;  /* prevents squishing */
 }
 
-/* MOBILE FIXES */
+/* Mobile fixes */
 @media (max-width: 768px) {
-
-    /* Bigger readable navbar text */
-    .navbar .nav-link {
-        font-size: 18px;
-        padding: 10px;
-    }
-
-    /* Better spacing in menu */
-    .navbar-nav {
-        margin-top: 10px;
-    }
-
-    /* Buttons full width */
     .btn {
         width: 100%;
-        margin-bottom: 6px;
+        margin-bottom: 5px;
     }
 
-    /* Headings */
     h3 {
         font-size: 20px;
     }
 
-    /* Table text smaller */
     table {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
 </style>
@@ -97,7 +70,7 @@ table {
 <span class="navbar-toggler-icon"></span>
 </button>
 
-<div class="collapse navbar-collapse justify-content-end" id="navMenu">
+<div class="collapse navbar-collapse" id="navMenu">
 
 <ul class="navbar-nav ms-auto">
 
