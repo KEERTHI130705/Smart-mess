@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row text-center">
+
+<div class="col-md-4">
+<div class="card p-4 bg-primary text-white">
+<h4>Inventory</h4>
+<a href="/inventory" class="btn btn-light mt-2">Open</a>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-4 bg-success text-white">
+<h4>Dishes</h4>
+<a href="/recipe" class="btn btn-light mt-2">Open</a>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-4 bg-warning text-dark">
+<h4>Cook</h4>
+<a href="/cook" class="btn btn-dark mt-2">Open</a>
+</div>
+</div>
+
+</div>
+
+{% endblock %}

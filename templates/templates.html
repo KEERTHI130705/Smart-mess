@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SmartMess</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body { background: #f5f7fa; }
+.navbar { background: linear-gradient(45deg,#4e73df,#1cc88a); }
+.card { border-radius: 15px; }
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark p-3">
+<span class="navbar-brand">🍽️ SmartMess</span>
+<div>
+<a href="/" class="btn btn-light btn-sm">Home</a>
+<a href="/inventory" class="btn btn-light btn-sm">Inventory</a>
+<a href="/recipe" class="btn btn-light btn-sm">Recipes</a>
+<a href="/cook" class="btn btn-light btn-sm">Cook</a>
+<a href="/chart" class="btn btn-light btn-sm">Chart</a>
+<a href="/logout" class="btn btn-danger btn-sm">Logout</a>
+</div>
+</nav>
+
+<div class="container mt-4">
+{% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

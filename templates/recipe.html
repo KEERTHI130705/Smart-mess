@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Dishes</h3>
+
+<a href="/create_dish" class="btn btn-primary mb-3">+ Create Dish</a>
+
+<table class="table table-bordered">
+<tr class="table-dark">
+<th>Dish</th><th>Actions</th>
+</tr>
+
+{% for d in dishes %}
+<tr>
+<td>{{d[0]}}</td>
+<td>
+<a href="/dish/{{d[0]}}" class="btn btn-success btn-sm">Open</a>
+<a href="/delete_dish/{{d[0]}}" class="btn btn-danger btn-sm">Delete</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

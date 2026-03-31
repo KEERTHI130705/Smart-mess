@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Edit Ingredient</h3>
+
+<form method="POST" class="card p-4">
+
+<input name="ingredient" value="{{item[2]}}" class="form-control mb-2">
+
+<input name="quantity" value="{{item[3]}}" class="form-control mb-2">
+
+<select name="unit" class="form-control mb-2">
+<option>{{item[4]}}</option>
+<option>kg</option><option>g</option><option>L</option><option>ml</option><option>pieces</option>
+</select>
+
+<button class="btn btn-success">Update</button>
+
+</form>
+
+{% endblock %}

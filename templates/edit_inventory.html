@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Edit Inventory</h3>
+
+<form method="POST" class="card p-4">
+<input name="quantity" value="{{item[1]}}" class="form-control mb-2">
+
+<select name="unit" class="form-control mb-2">
+<option>{{item[2]}}</option>
+<option>kg</option><option>g</option><option>L</option><option>ml</option><option>pieces</option>
+</select>
+
+<button class="btn btn-primary">Update</button>
+</form>
+
+{% endblock %}

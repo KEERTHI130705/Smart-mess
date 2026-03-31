@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Inventory</h3>
+
+<div class="card p-3 mb-4">
+<form method="POST" class="row g-2">
+
+<div class="col-md-3">
+<input name="name" class="form-control" placeholder="Item">
+</div>
+
+<div class="col-md-3">
+<input name="quantity" class="form-control" placeholder="Quantity">
+</div>
+
+<div class="col-md-3">
+<select name="unit" class="form-control">
+<option>kg</option><option>g</option><option>L</option><option>ml</option><option>pieces</option>
+</select>
+</div>
+
+<div class="col-md-3">
+<button class="btn btn-success w-100">Add</button>
+</div>
+
+</form>
+</div>
+
+<table class="table table-bordered table-hover">
+<tr class="table-dark">
+<th>Item</th><th>Qty</th><th>Unit</th><th>Actions</th>
+</tr>
+
+{% for i in data %}
+<tr>
+<td>{{i[0]}}</td>
+<td>{{i[1]}}</td>
+<td>{{i[2]}}</td>
+<td>
+<a href="/edit_inventory/{{i[0]}}" class="btn btn-warning btn-sm">Edit</a>
+<a href="/delete_inventory/{{i[0]}}" class="btn btn-danger btn-sm">Delete</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

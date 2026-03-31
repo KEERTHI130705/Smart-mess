@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Dish: {{dish}}</h3>
+
+<div class="card p-3 mb-3">
+<form method="POST" class="row g-2">
+
+<div class="col-md-3">
+<input name="ingredient" class="form-control" placeholder="Ingredient">
+</div>
+
+<div class="col-md-3">
+<input name="quantity" class="form-control" placeholder="Qty">
+</div>
+
+<div class="col-md-3">
+<select name="unit" class="form-control">
+<option>kg</option><option>g</option><option>L</option><option>ml</option><option>pieces</option>
+</select>
+</div>
+
+<div class="col-md-3">
+<button class="btn btn-primary w-100">Add</button>
+</div>
+
+</form>
+</div>
+
+<table class="table table-bordered table-hover">
+<tr class="table-success">
+<th>Ingredient</th><th>Qty</th><th>Unit</th><th>Actions</th>
+</tr>
+
+{% for i in items %}
+<tr>
+<td>{{i[1]}}</td>
+<td>{{i[2]}}</td>
+<td>{{i[3]}}</td>
+<td>
+<a href="/edit_ingredient/{{i[0]}}/{{dish}}" class="btn btn-warning btn-sm">Edit</a>
+<a href="/delete_ingredient/{{i[0]}}/{{dish}}" class="btn btn-danger btn-sm">Delete</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
