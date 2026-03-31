@@ -3,26 +3,40 @@
 <head>
 <title>SmartMess</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
 body { background: #f4f6f9; font-family: 'Segoe UI'; }
+
+/* Navbar */
 .navbar { background: linear-gradient(45deg,#4e73df,#1cc88a); }
-.card { border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-.btn { border-radius: 10px; }
-table { background: white; }
-th { text-align: center; }
-td { text-align: center; vertical-align: middle; }
+
+/* Cards */
+.card { border-radius: 15px; }
+
+/* Table scroll */
+.table-container { overflow-x: auto; }
+
+/* Mobile UI */
+@media (max-width: 768px) {
+    .btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
 </style>
 
 </head>
 
 <body>
 
-<nav class="navbar p-3 text-white">
-<span class="fw-bold fs-5">🍽 SmartMess</span>
+<nav class="navbar p-2 text-white d-flex justify-content-between flex-wrap">
 
-<div>
+<span class="fw-bold">🍽 SmartMess</span>
+
+<div class="d-flex flex-wrap gap-1">
 <a href="/" class="btn btn-light btn-sm">Home</a>
 <a href="/inventory" class="btn btn-light btn-sm">Inventory</a>
 <a href="/recipe" class="btn btn-light btn-sm">Dishes</a>
@@ -30,9 +44,10 @@ td { text-align: center; vertical-align: middle; }
 <a href="/chart" class="btn btn-light btn-sm">Analytics</a>
 <a href="/logout" class="btn btn-danger btn-sm">Logout</a>
 </div>
+
 </nav>
 
-<div class="container mt-4">
+<div class="container mt-3">
 {% block content %}{% endblock %}
 </div>
 

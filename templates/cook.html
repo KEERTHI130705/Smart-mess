@@ -6,20 +6,20 @@
 <div class="card p-3 mb-3">
 <form method="POST" class="row g-2">
 
-<div class="col-md-4">
+<div class="col-12 col-md-4">
 <input name="dish" class="form-control" placeholder="Dish">
 </div>
 
-<div class="col-md-4">
+<div class="col-12 col-md-4">
 <input name="units" class="form-control" placeholder="Units">
 </div>
 
-<div class="col-md-2">
-<button name="check" class="btn btn-info w-100">Check</button>
+<div class="col-12 col-md-2">
+<button name="check" class="btn btn-info">Check</button>
 </div>
 
-<div class="col-md-2">
-<button name="cook" class="btn btn-danger w-100">Cook</button>
+<div class="col-12 col-md-2">
+<button name="cook" class="btn btn-danger">Cook</button>
 </div>
 
 </form>
@@ -27,6 +27,7 @@
 
 <h5>{{message}}</h5>
 
+<div class="table-container">
 <table class="table table-bordered">
 
 <tr class="table-warning">
@@ -34,13 +35,10 @@
 </tr>
 
 {% for r in result %}
-
 <tr {% if r[3] == "NOT ENOUGH" %} class="table-danger" {% endif %}>
-
 <td>{{r[0]}}</td>
 <td>{{r[1]}}</td>
 <td>{{r[2]}}</td>
-
 <td>
 {% if r[3] == "OK" %}
 <span class="badge bg-success">OK</span>
@@ -48,11 +46,10 @@
 <span class="badge bg-danger">Not Enough</span>
 {% endif %}
 </td>
-
 </tr>
-
 {% endfor %}
 
 </table>
+</div>
 
 {% endblock %}

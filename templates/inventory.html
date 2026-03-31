@@ -3,31 +3,33 @@
 
 <h3>Inventory</h3>
 
-<div class="card p-3 mb-4">
+<div class="card p-3 mb-3">
 <form method="POST" class="row g-2">
 
-<div class="col-md-3">
+<div class="col-12 col-md-3">
 <input name="name" class="form-control" placeholder="Item">
 </div>
 
-<div class="col-md-3">
+<div class="col-12 col-md-3">
 <input name="quantity" class="form-control" placeholder="Quantity">
 </div>
 
-<div class="col-md-3">
+<div class="col-12 col-md-3">
 <select name="unit" class="form-control">
 <option>kg</option><option>g</option><option>L</option><option>ml</option><option>pieces</option>
 </select>
 </div>
 
-<div class="col-md-3">
-<button class="btn btn-success w-100">Add</button>
+<div class="col-12 col-md-3">
+<button class="btn btn-success">Add</button>
 </div>
 
 </form>
 </div>
 
-<table class="table table-bordered table-hover">
+<div class="table-container">
+<table class="table table-bordered">
+
 <tr class="table-dark">
 <th>Item</th><th>Qty</th><th>Unit</th><th>Actions</th>
 </tr>
@@ -45,5 +47,6 @@
 {% endfor %}
 
 </table>
+</div>
 
 {% endblock %}
