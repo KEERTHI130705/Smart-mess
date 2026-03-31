@@ -64,32 +64,6 @@ def init_db():
 
 init_db()
 
-# ---------- LOGIN ---------- #
-@app.route('/login', methods=['GET','POST'])
-def login():
-    if request.method == 'POST':
-        u = request.form.get('username')
-        p = request.form.get('password')
-
-        conn = get_db()
-        cur = conn.cursor()
-        cur.execute("SELECT * FROM users WHERE username=? AND password=?", (u,p))
-        user = cur.fetchone()
-        conn.close()
-
-        if user:
-            session['user'] = u
-            return redirect('/')
-        return "Invalid Login"
-
-    return render_template('login.html')
-
-
-@app.route('/logout')
-def logout():
-    session.clear()
-    return redirect('/login')
-
 
 # ---------- HOME ---------- #
 @app.route('/')
