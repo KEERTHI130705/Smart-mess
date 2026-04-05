@@ -35,6 +35,17 @@ def init_db():
     conn.close()
 
 init_db()
+def clean_empty_data():
+    conn = get_db()
+    cur = conn.cursor()
+
+    # remove empty dishes / bad rows
+    cur.execute("DELETE FROM recipes WHERE ingredient='' OR quantity=0")
+
+    conn.commit()
+    conn.close()
+
+clean_empty_data()
 
 # ---------- UNIT SYSTEM ---------- #
 def convert_to_base(qty, unit):
