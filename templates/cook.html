@@ -3,54 +3,40 @@
 
 <h3>Cook Dish</h3>
 
+{% if message %}
+<div class="alert alert-warning text-center">{{message}}</div>
+{% endif %}
+
 <div class="card p-3 mb-3">
 <form method="POST" class="row g-2">
 
-<div class="col-12 col-md-4">
-<input name="dish" class="form-control" placeholder="Dish">
-</div>
+<input name="dish" class="form-control" placeholder="Dish" required>
+<input name="people" class="form-control" placeholder="Number of People" required>
 
-<div class="col-12 col-md-4">
-<input name="units" class="form-control" placeholder="Units">
-</div>
-
-<div class="col-12 col-md-2">
 <button name="check" class="btn btn-info">Check</button>
-</div>
-
-<div class="col-12 col-md-2">
 <button name="cook" class="btn btn-danger">Cook</button>
-</div>
 
 </form>
 </div>
 
-<h5>{{message}}</h5>
-
-<div class="table-container">
-<div class="table-container">
 <table class="table table-bordered table-sm text-center">
 
 <tr class="table-warning">
-<th>Ingredient</th><th>Required</th><th>Available</th><th>Status</th>
+<th>Ingredient</th>
+<th>Required</th>
+<th>Available</th>
+<th>Status</th>
 </tr>
 
 {% for r in result %}
-<tr {% if r[3] == "NOT ENOUGH" %} class="table-danger" {% endif %}>
+<tr>
 <td>{{r[0]}}</td>
 <td>{{r[1]}}</td>
 <td>{{r[2]}}</td>
-<td>
-{% if r[3] == "OK" %}
-<span class="badge bg-success">OK</span>
-{% else %}
-<span class="badge bg-danger">Not Enough</span>
-{% endif %}
-</td>
+<td>{{r[3]}}</td>
 </tr>
 {% endfor %}
 
 </table>
-</div>
 
 {% endblock %}

@@ -3,27 +3,27 @@
 
 <h3>Dishes</h3>
 
-<a href="/create_dish" class="btn btn-primary mb-3">+ Create Dish</a>
+<a href="/create_dish" class="btn btn-primary mb-3 w-100">+ Create Dish</a>
 
-<div class="table-container">
-<div class="table-container">
 <table class="table table-bordered table-sm text-center">
 
 <tr class="table-dark">
-<th>Dish</th><th>Actions</th>
+<th>Dish</th>
+<th>Actions</th>
 </tr>
 
 {% for d in dishes %}
 <tr>
 <td>{{d[0]}}</td>
 <td>
+<div class="table-buttons">
 <a href="/dish/{{d[0]}}" class="btn btn-success btn-sm">Open</a>
 <a href="/delete_dish/{{d[0]}}" class="btn btn-danger btn-sm">Delete</a>
+</div>
 </td>
 </tr>
 {% endfor %}
 
 </table>
-</div>
 
 {% endblock %}

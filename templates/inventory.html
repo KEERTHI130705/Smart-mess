@@ -3,36 +3,47 @@
 
 <h3>Inventory</h3>
 
+{% if message %}
+<div class="alert alert-warning text-center">
+    {{ message }}
+</div>
+{% endif %}
+
 <div class="card p-3 mb-3">
 <form method="POST" class="row g-2">
 
 <div class="col-12 col-md-3">
-<input name="name" class="form-control" placeholder="Item">
+<input name="name" class="form-control" placeholder="Item" required>
 </div>
 
 <div class="col-12 col-md-3">
-<input name="quantity" class="form-control" placeholder="Quantity">
+<input name="quantity" class="form-control" placeholder="Quantity" required>
 </div>
 
 <div class="col-12 col-md-3">
 <select name="unit" class="form-control">
-<option>kg</option><option>g</option><option>L</option><option>ml</option><option>pieces</option>
+<option>kg</option>
+<option>g</option>
+<option>L</option>
+<option>ml</option>
+<option>pieces</option>
 </select>
 </div>
 
 <div class="col-12 col-md-3">
-<button class="btn btn-success">Add</button>
+<button class="btn btn-success w-100">Add</button>
 </div>
 
 </form>
 </div>
 
-<div class="table-container">
-<div class="table-container">
-<table class="table table-bordered table-sm text-center">
+<table class="table table-bordered table-sm align-middle">
 
 <tr class="table-dark">
-<th>Item</th><th>Qty</th><th>Unit</th><th>Actions</th>
+<th>Item</th>
+<th>Qty</th>
+<th>Unit</th>
+<th>Actions</th>
 </tr>
 
 {% for i in data %}
@@ -40,14 +51,17 @@
 <td>{{i[0]}}</td>
 <td>{{i[1]}}</td>
 <td>{{i[2]}}</td>
+
 <td>
+<div class="table-buttons">
 <a href="/edit_inventory/{{i[0]}}" class="btn btn-warning btn-sm">Edit</a>
 <a href="/delete_inventory/{{i[0]}}" class="btn btn-danger btn-sm">Delete</a>
+</div>
 </td>
+
 </tr>
 {% endfor %}
 
 </table>
-</div>
 
 {% endblock %}

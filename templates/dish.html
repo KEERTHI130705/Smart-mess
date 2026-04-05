@@ -6,33 +6,25 @@
 <div class="card p-3 mb-3">
 <form method="POST" class="row g-2">
 
-<div class="col-12 col-md-3">
-<input name="ingredient" class="form-control" placeholder="Ingredient">
-</div>
+<input name="ingredient" class="form-control" placeholder="Ingredient" required>
+<input name="quantity" class="form-control" placeholder="Quantity" required>
 
-<div class="col-12 col-md-3">
-<input name="quantity" class="form-control" placeholder="Quantity">
-</div>
-
-<div class="col-12 col-md-3">
 <select name="unit" class="form-control">
 <option>kg</option><option>g</option><option>L</option><option>ml</option><option>pieces</option>
 </select>
-</div>
 
-<div class="col-12 col-md-3">
 <button class="btn btn-primary">Add</button>
-</div>
 
 </form>
 </div>
 
-<div class="table-container">
-<div class="table-container">
 <table class="table table-bordered table-sm text-center">
 
 <tr class="table-success">
-<th>Ingredient</th><th>Qty</th><th>Unit</th><th>Actions</th>
+<th>Ingredient</th>
+<th>Qty</th>
+<th>Unit</th>
+<th>Actions</th>
 </tr>
 
 {% for i in items %}
@@ -40,14 +32,17 @@
 <td>{{i[1]}}</td>
 <td>{{i[2]}}</td>
 <td>{{i[3]}}</td>
+
 <td>
+<div class="table-buttons">
 <a href="/edit_ingredient/{{i[0]}}/{{dish}}" class="btn btn-warning btn-sm">Edit</a>
 <a href="/delete_ingredient/{{i[0]}}/{{dish}}" class="btn btn-danger btn-sm">Delete</a>
+</div>
 </td>
+
 </tr>
 {% endfor %}
 
 </table>
-</div>
 
 {% endblock %}

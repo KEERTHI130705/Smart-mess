@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-
+{% if message %}
+<div class="alert alert-warning">{{ message }}</div>
+{% endif %}
 <h3>Create Dish</h3>
 
 <form method="POST" class="card p-3">
